@@ -24,15 +24,15 @@ A React Application that ises ther Axios lib. to make user-initiated requests fo
 
 # Time estimates for production.
 
-Name of feature: ________________________________
+Name of feature: Set up your React repository & API keys.
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 35
 
-Start time: _____
+Start time: 2:20
 
-Finish time: _____
+Finish time: 2:57
 
-Actual time needed to complete: _____
+Actual time needed to complete: 38
 
 
 Name of feature: ________________________________
