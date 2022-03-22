@@ -1,0 +1,13 @@
+#explForm {
+  margin-top: 55px;
+  background-color: azure;
+  padding: 40px;
+  border-radius: 15px;
+  border: solid 2px black;
+  text-align: center;
+}
+
+#formLabel {
+  font-weight: 700;
+
+}
