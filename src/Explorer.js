@@ -9,12 +9,29 @@ class Explorer extends React.Component {
     super(props)
     this.state = {
       data: {},
-      location: ''
+      location: '',
+      errorMessage: '',
+      modalDataState: false
     }
   }
 
   handleChange = (event) => {
     this.setState({ location: event.target.value });
+  }
+
+  hideModal = () => {
+    this.setState({
+      modalDataState: false,
+    });
+  }
+
+  openModal = (errorMessage) => {
+    this.setState({
+      modalDataState: true
+    });
+    this.setState({
+      errorMessage: errorMessage
+    });
   }
 
   getLoc = async (event) => {
@@ -24,7 +41,7 @@ class Explorer extends React.Component {
       let cityData = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.location}&format=json`)
       this.setState({ data: cityData.data[0] });
     } catch (e) {
-      console.error(e)
+      this.openModal(e)
     }
   }
 
