@@ -35,15 +35,15 @@ Finish time: 2:57
 Actual time needed to complete: 38
 
 
-Name of feature: ________________________________
+Name of feature: As a user of City Explorer, I want to enter the name of a location so that I can see the exact latitude and longitude of that.
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1 hour
 
-Start time: _____
+Start time: 3:23
 
-Finish time: _____
+Finish time: 6:38
 
-Actual time needed to complete: _____
+Actual time needed to complete: 3:10
 
 
 Name of feature: ________________________________
