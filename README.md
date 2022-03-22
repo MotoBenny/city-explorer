@@ -46,12 +46,23 @@ Finish time: 6:38
 Actual time needed to complete: 3:10
 
 
-Name of feature: ________________________________
+Name of feature: Display a Map
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 45
 
-Start time: _____
+Start time: 6:45
 
-Finish time: _____
+Finish time: 7:25
 
-Actual time needed to complete: _____
+Actual time needed to complete: 40
+
+
+Name of feature: style the application
+
+Estimate of time needed to complete: 30
+
+Start time: 7:30
+
+Finish time: 7:57
+
+Actual time needed to complete: 30

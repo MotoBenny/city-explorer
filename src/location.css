@@ -1,0 +1,25 @@
+
+
+#locCard {
+  display: flex;
+  justify-content: center;
+  border-radius: 25px;
+  background-color: rgb(250, 242, 231);
+}
+
+#locTitle {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: bolder;
+}
+
+#locImg {
+  border-radius: 55px;
+}
+
+.locText {
+  display: flex;
+  justify-content: center;
+}
+

@@ -31,8 +31,8 @@ class Explorer extends React.Component {
   render() {
     return (
       <>
-        <Form>
-          <Form.Label> City Explorer!
+        <Form id='explForm'>
+          <Form.Label id="formLabel"> City Explorer!
           </Form.Label>
           <Form.Control
             onChange={this.handleChange}

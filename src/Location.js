@@ -9,17 +9,20 @@ class Location extends React.Component {
   }
 
   render() {
+    let map = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.props.lat},${this.props.long}&zoom=13`
     return (
       // bootstrap card
-      <Card style={{ width: '18rem' }}>
+      <Card id='locCard' style={{ width: '26rem' }}>
         <Card.Body>
-          <Card.Title>{this.props.city}</Card.Title>
-          <Card.Text>
+          <Card.Title id='locTitle'>{this.props.city}</Card.Title>
+          <Card.Text className='locText'>
             The Latitude is: {this.props.lat}
           </Card.Text>
-          <Card.Text>
+          <Card.Text className='locText'>
             the Longitude is: {this.props.long}
           </Card.Text>
+          <Card.Img in='locImg' variant="top" src={map} />
+
         </Card.Body>
       </Card>
     );
