@@ -22,6 +22,9 @@ A React Application that ises ther Axios lib. to make user-initiated requests fo
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
+
+[wrrc diagram](./public/mrrcdiagram.jpeg)
+
 # Time estimates for production.
 
 Name of feature: Set up your React repository & API keys.
@@ -66,3 +69,16 @@ Start time: 7:30
 Finish time: 7:57
 
 Actual time needed to complete: 30
+
+
+Name of feature: Clear Error Messages
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 8:48
+
+Finish time: 
+
+Actual time needed to complete: 
+
+
