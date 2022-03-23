@@ -51,7 +51,7 @@ class Explorer extends React.Component {
   getForecast = async () => {
     // event.preventDefault();
     let forecastData = await axios.get(`${process.env.REACT_APP_SERVER}/weather?city_name=${this.state.location}`)
-    // console.log(forecastData)
+    console.log(forecastData.data)
     this.setState({
       forecast: forecastData.data
     })
