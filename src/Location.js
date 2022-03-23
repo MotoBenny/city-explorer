@@ -22,7 +22,6 @@ class Location extends React.Component {
             the Longitude is: {this.props.long}
           </Card.Text>
           <Card.Img in='locImg' variant="top" src={map} />
-
         </Card.Body>
       </Card>
     );
