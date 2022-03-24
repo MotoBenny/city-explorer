@@ -15,7 +15,7 @@ class ForecastCard extends React.Component {
             </Card.Text>
           </Card.Body>
         </Card>
-        <Card>
+        {/* <Card>
           <Card.Body>
             <Card.Title>{this.props.dateTwo}</Card.Title>
             <Card.Text>
@@ -29,8 +29,8 @@ class ForecastCard extends React.Component {
             <Card.Text>
               The weather will be {this.props.foreThree}
             </Card.Text>
-          </Card.Body>
-        </Card>
+          </Card.Body> */}
+        {/* </Card> */}
       </>
     );
   }

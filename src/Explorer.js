@@ -51,9 +51,9 @@ class Explorer extends React.Component {
   getForecast = async () => {
     // event.preventDefault();
     let forecastData = await axios.get(`${process.env.REACT_APP_SERVER}/weather?city_name=${this.state.location}`)
-    console.log(forecastData.data)
+    console.log(forecastData)
     this.setState({
-      forecast: forecastData.data
+      forecast: forecastData
     })
   }
 
@@ -84,13 +84,8 @@ class Explorer extends React.Component {
         ) : null}
         {this.state.forecast ? ( // create state to hold weather data from server call
           <ForecastCard
-            city={this.state.data.display_name}
-            foreOne={this.state.forecast.forecastOne}
-            dateOne={this.state.forecast.dateOne}
-            foreTwo={this.state.forecast.forecastTwo}
-            dateTwo={this.state.forecast.dateTwo}
-            foreThree={this.state.forecast.forecastThree}
-            dateThree={this.state.forecast.dateThree}
+            city={this.state.forecast.data.cityName}
+            foreOne={this.state.forecast.data.description}
           />
         ) : null}
       </>
