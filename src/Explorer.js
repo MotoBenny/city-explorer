@@ -1,7 +1,7 @@
 'use-strict';
 import axios from 'axios';
 import React from 'react';
-import { Form, Button, Card } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import Location from './Location';
 import ForecastCard from './Weather';
 import Movies from './Movies';
