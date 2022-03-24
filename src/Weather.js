@@ -6,7 +6,7 @@ class ForecastCard extends React.Component {
   render() {
     return (
       <>
-        <Card>
+        <Card style={{ width: '22rem' }}>
           <Card.Body>
             <Card.Title>Forecast for {this.props.city}</Card.Title>
             <Card.Text>

@@ -29,6 +29,8 @@ A React Application that ises ther Axios lib. to make user-initiated requests fo
 
 [wrrc lab08](./public/Lab07_8.jpeg)
 
+[wrrc lab09](./public/Lab09.jpeg)
+
 # Time estimates for production.
 
 Name of feature: Set up your React repository & API keys.
@@ -105,3 +107,15 @@ Start time: 6:54
 Finish time: 11:46
 
 Actual time needed to complete: 6 hours
+
+_____________________________________
+Name of feature: Refactor/componentize back end
+
+Estimate of time needed to complete: 45
+
+Start time: 2:30
+
+Finish time: 
+
+Actual time needed to complete: 
+
