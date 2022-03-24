@@ -1,9 +1,10 @@
 'use-strict';
 import axios from 'axios';
 import React from 'react';
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Card } from "react-bootstrap";
 import Location from './Location';
 import ForecastCard from './Weather';
+import Movies from './Movies';
 
 class Explorer extends React.Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class Explorer extends React.Component {
       location: '',
       errorMessage: '',
       modalDataState: false,
-      forecast: ''
+      forecast: '',
+      movies: ''
     }
   }
 
@@ -42,7 +44,8 @@ class Explorer extends React.Component {
     try {
       let cityData = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.location}&format=json`)
       this.setState({ data: cityData.data[0] });
-      this.getForecast()
+      this.getForecast();
+      this.getMovies();
     } catch (e) {
       this.openModal(e)
     }
@@ -51,12 +54,20 @@ class Explorer extends React.Component {
   getForecast = async () => {
     // event.preventDefault();
     let forecastData = await axios.get(`${process.env.REACT_APP_SERVER}/weather?city_name=${this.state.location}`)
-    console.log(forecastData)
     this.setState({
       forecast: forecastData
     })
+    console.log(`forecast state: ${forecastData}`);
   }
 
+  getMovies = async () => {
+    let movieData = await axios.get(`${process.env.REACT_APP_SERVER}/movies?city_name=${this.state.location}`)
+
+    this.setState({
+      movies: movieData.data.moviesParsed
+    })
+    console.log(`Movies state: ${movieData.data.moviesParsed}`);
+  }
 
   render() {
 
@@ -82,15 +93,30 @@ class Explorer extends React.Component {
             long={this.state.data.lon}
           />
         ) : null}
-        {this.state.forecast ? ( // create state to hold weather data from server call
+
+        {this.state.forecast ? (
           <ForecastCard
+            date={this.state.forecast.data.date}
             city={this.state.forecast.data.cityName}
             foreOne={this.state.forecast.data.description}
           />
         ) : null}
+        {this.state.movies ? (
+          this.state.movies.map((element) =>
+            <Movies
+              title={element.title}
+              overview={element.overview}
+              vote_average={element.vote_average}
+              vote_count={element.vote_count}
+              popularity={element.popularity}
+              release_date={element.release_date}
+            />
+          )) : null}
       </>
     );
   }
 }
 
+
 export default Explorer;
+
