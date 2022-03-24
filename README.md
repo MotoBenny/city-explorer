@@ -23,7 +23,11 @@ A React Application that ises ther Axios lib. to make user-initiated requests fo
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
 
-[wrrc diagram](./public/mrrcdiagram.jpeg)
+[wrrc diagram Lab06](./public/mrrcdiagram.jpeg)
+
+[wrrc lab07](./public/lab07_8.jpg)
+
+[wrrc lab08](./public/Lab07_8.jpeg)
 
 # Time estimates for production.
 
@@ -98,6 +102,6 @@ Estimate of time needed to complete: 3:30
 
 Start time: 6:54
 
-Finish time: 
+Finish time: 11:46
 
-Actual time needed to complete: 
+Actual time needed to complete: 6 hours
