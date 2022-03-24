@@ -81,4 +81,23 @@ Finish time:
 
 Actual time needed to complete: 
 
+_____________________________________
+Name of feature: Weather API Live
 
+Estimate of time needed to complete: 1:30
+
+Start time: 2:53
+
+Finish time: 6:32
+
+Actual time needed to complete: 3:45
+_____________________________________
+Name of feature: Weather API Live
+
+Estimate of time needed to complete: 1:30
+
+Start time: 2:53
+
+Finish time: 6:32
+
+Actual time needed to complete: 3:45
