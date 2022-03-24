@@ -25,7 +25,7 @@ A React Application that ises ther Axios lib. to make user-initiated requests fo
 
 [wrrc diagram Lab06](./public/mrrcdiagram.jpeg)
 
-[wrrc lab07](./public/lab07_8.jpg)
+[wrrc lab07](./public/lab07_8.jpeg)
 
 [wrrc lab08](./public/Lab07_8.jpeg)
 
