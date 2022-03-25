@@ -3,7 +3,6 @@ import { Card } from 'react-bootstrap';
 
 class Movies extends React.Component {
   render() {
-    console.log(this.props)
     return (
       <>
         <Card>

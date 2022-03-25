@@ -53,24 +53,24 @@ class Explorer extends React.Component {
 
   getForecast = async () => {
     // event.preventDefault();
-    let forecastData = await axios.get(`${process.env.REACT_APP_SERVER}/weather?city_name=${this.state.location}`)
+    let forecastData = await axios.get(`${process.env.REACT_APP_SERVER}/weather?city=${this.state.location}`)
+    console.log(forecastData);
     this.setState({
-      forecast: forecastData
+      forecast: forecastData.data[0]
     })
     console.log(`forecast state: ${forecastData}`);
   }
 
   getMovies = async () => {
-    let movieData = await axios.get(`${process.env.REACT_APP_SERVER}/movies?city_name=${this.state.location}`)
-
+    let movieData = await axios.get(`${process.env.REACT_APP_SERVER}/movies?city=${this.state.location}`)
     this.setState({
-      movies: movieData.data.moviesParsed
+      movies: movieData.data
     })
     console.log(`Movies state: ${movieData.data.moviesParsed}`);
   }
 
   render() {
-
+    // console.log(this.);
     return (
       <>
         <Form id='explForm'>
@@ -96,9 +96,9 @@ class Explorer extends React.Component {
 
         {this.state.forecast ? (
           <ForecastCard
-            date={this.state.forecast.data.date}
-            city={this.state.forecast.data.cityName}
-            foreOne={this.state.forecast.data.description}
+            date={this.state.forecast.time}
+            city={this.state.location}
+            foreOne={this.state.forecast.forecast}
           />
         ) : null}
         {this.state.movies ? (
@@ -117,6 +117,4 @@ class Explorer extends React.Component {
   }
 }
 
-
 export default Explorer;
-
