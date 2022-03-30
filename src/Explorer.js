@@ -19,44 +19,44 @@ class Explorer extends React.Component {
     }
   }
 
-  handleChange = (event) => {
-    this.setState({ location: event.target.value });
+  handleChange = (event) => { // event handler for input of location on Form.
+    this.setState({ location: event.target.value }); // sets the state of Explorer.js location to the input from the form. event.target.value
   }
 
-  hideModal = () => {
+  hideModal = () => { // swaps the state of modalDataState to false, which is passed to ErrModal.js through props, and is used as onHide
     this.setState({
       modalDataState: false,
     });
   }
 
-  openModal = (errorMessage) => {
+  openModal = (errorMessage) => { // swaps the state of modalDataState to true, which is passed to ErrModal.js through props and is used as show
     this.setState({
       modalDataState: true
     });
-    this.setState({
+    this.setState({ // this sets the errorMessage to state which is then passed to the ErrModal. same as OpenModal HideModal methods, Through Props
       errorMessage: errorMessage
     });
   }
 
-  getLoc = async (event) => {
-    event.preventDefault()
+  getLoc = async (event) => { // async, since we are querying an API and must wait for the response. Do the same when querying a server
+    event.preventDefault() // we need this here, since this is a handler on a button press. 
     // query the api for the data
     try {
       let cityData = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.location}&format=json`)
       this.setState({ data: cityData.data[0] });
-      this.getForecast();
-      this.getMovies();
-    } catch (e) {
+      this.getForecast(); // method call to get forecast now that we have the location we need to query that API
+      this.getMovies(); // method call to movies now that we have the city name we need. 
+    } catch (e) { // If the try fails, we receive an error as response. If we do, it triggers the catch, which passes the error to openModal as e (event)
       this.openModal(e)
     }
   }
 
-  getForecast = async () => {
-    // event.preventDefault();
-    let forecastData = await axios.get(`${process.env.REACT_APP_SERVER}/weather?city=${this.state.location}`)
+  getForecast = async () => { // async just like getLoc
+
+    let forecastData = await axios.get(`${process.env.REACT_APP_SERVER}/weather?city=${this.state.location}`) // process.env.REACT_APP_SERVER calls the .env
     console.log(forecastData);
     this.setState({
-      forecast: forecastData.data[0]
+      forecast: forecastData.data[0] // sets state to correct data object within the forcast data we recieve from API, this could be done on backend.
     })
     console.log(`forecast state: ${forecastData}`);
   }
@@ -66,11 +66,10 @@ class Explorer extends React.Component {
     this.setState({
       movies: movieData.data
     })
-    console.log(`Movies state: ${movieData.data.moviesParsed}`);
+    console.log(`Movies state: ${movieData.data.moviesParsed}`); // we had to dial deep into the movie properties to get what we wanted. hence data.moviesParsed. Again, this probably should have been handled before the backend sent the movies up as its response. 
   }
 
   render() {
-    // console.log(this.);
     return (
       <>
         <Form id='explForm'>

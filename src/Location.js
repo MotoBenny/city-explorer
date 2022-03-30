@@ -5,7 +5,7 @@ import { Card } from 'react-bootstrap';
 class Location extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {} // had to set empty state here so we could access props. 
   }
 
   render() {
